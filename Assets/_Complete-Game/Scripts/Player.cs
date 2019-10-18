@@ -13,7 +13,8 @@ namespace Completed
 		public int pointsPerSoda = 20;				//Number of points to add to player health points when picking up a soda object.
 		public int wallDamage = 1;					//How much damage a player does to a wall when chopping it.
 		public Text healthText;						//UI Text to display current player health total.
-		public AudioClip moveSound1;				//1 of 2 Audio clips to play when player moves.
+        public Text manaText;                       //UI Text to display current player mana total.
+        public AudioClip moveSound1;				//1 of 2 Audio clips to play when player moves.
 		public AudioClip moveSound2;				//2 of 2 Audio clips to play when player moves.
 		public AudioClip eatSound1;					//1 of 2 Audio clips to play when player collects a health object.
 		public AudioClip eatSound2;					//2 of 2 Audio clips to play when player collects a health object.
@@ -22,14 +23,15 @@ namespace Completed
 		public AudioClip gameOverSound;				//Audio clip to play when player dies.
 		
 		private Animator animator;					//Used to store a reference to the Player's animator component.
-		private int health;                           //Used to store player health points total during level.
+		private int health;                         //Used to store player health points total during level.
+        private int mana;                           //Used to store player mana points total during level.
 #if UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
         private Vector2 touchOrigin = -Vector2.one;	//Used to store location of screen touch origin for mobile controls.
 #endif
-		
-		
-		//Start overrides the Start function of MovingObject
-		protected override void Start ()
+
+
+        //Start overrides the Start function of MovingObject
+        protected override void Start ()
 		{
 			//Get a component reference to the Player's animator component
 			animator = GetComponent<Animator>();
@@ -39,9 +41,15 @@ namespace Completed
 			
 			//Set the healthText to reflect the current player health total.
 			healthText.text = "Health: " + health;
-			
-			//Call the Start function of the MovingObject base class.
-			base.Start ();
+
+            //Get the current mana point total stored in GameManager.instance between levels.
+            mana = GameManager.instance.playerManaPoints;
+
+            //Set the healthText to reflect the current player health total.
+            manaText.text = "Mana: " + mana;
+
+            //Call the Start function of the MovingObject base class.
+            base.Start ();
 		}
 		
 		
@@ -135,9 +143,12 @@ namespace Completed
 			
 			//Update health text display to reflect current score.
 			healthText.text = "Health: " + health;
-			
-			//Call the AttemptMove method of the base class, passing in the component T (in this case Wall) and x and y direction to move.
-			base.AttemptMove <T> (xDir, yDir);
+
+            //Update mana text display to reflect current score.
+            manaText.text = "mana: " + mana;
+
+            //Call the AttemptMove method of the base class, passing in the component T (in this case Wall) and x and y direction to move.
+            base.AttemptMove <T> (xDir, yDir);
 			
 			//Hit allows us to reference the result of the Linecast done in Move.
 			RaycastHit2D hit;
@@ -192,7 +203,7 @@ namespace Completed
 				health += pointsPerFood;
 				
 				//Update healthText to represent current total and notify player that they gained points
-				healthText.text = "+" + pointsPerFood + " Health: " + health;
+				healthText.text = "Health: " + health + " + " + pointsPerFood;
 				
 				//Call the RandomizeSfx function of SoundManager and pass in two eating sounds to choose between to play the eating sound effect.
 				SoundManager.instance.RandomizeSfx (eatSound1, eatSound2);
@@ -208,7 +219,7 @@ namespace Completed
 				health += pointsPerSoda;
 				
 				//Update healthText to represent current total and notify player that they gained points
-				healthText.text = "+" + pointsPerSoda + " Health: " + health;
+				healthText.text = "Health: " + health + " + " + pointsPerSoda;
 				
 				//Call the RandomizeSfx function of SoundManager and pass in two drinking sounds to choose between to play the drinking sound effect.
 				SoundManager.instance.RandomizeSfx (drinkSound1, drinkSound2);
