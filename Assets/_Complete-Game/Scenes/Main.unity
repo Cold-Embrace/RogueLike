@@ -523,6 +523,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 133658, guid: 1ca8c6e960c494bbd937610290f80d1b, type: 3}
   soundManager: {fileID: 109316, guid: 76cd81135280f4ad6a4fa80f6422aea2, type: 3}
+--- !u!1 &1171959518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 146652, guid: 28b53fc28d3a140c392f0e2d919f9de1,
+    type: 3}
+  m_PrefabInstance: {fileID: 595632862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1171959525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171959518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5961a5b22887b114d98491debb853e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Toolbet: {fileID: 0}
+  MainInventory: {fileID: 0}
+  InventoryPanel: {fileID: 0}
+  DragIcon: {fileID: 0}
+  Uitext: {fileID: 0}
+  ItemsDescrition: {fileID: 0}
+  ButtonDrop: {fileID: 0}
+  ChestPanel: {fileID: 0}
+  DropCountField: {fileID: 0}
+  DropZone: {fileID: 0}
+  source: {fileID: 0}
+  ArmRange: 3
+  InventoryButton: 9
+  PickupItemButton: 102
+  PickupSound: {fileID: 0}
+  IsDragging: 0
+  DraggingInventory: {fileID: 0}
+  OpenedObject: {fileID: 0}
 --- !u!1 &1410265689
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1410265690
 MonoBehaviour:
   m_ObjectHideFlags: 0
