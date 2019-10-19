@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class CharacterInventory : MonoBehaviour
 {
-    public Item[] CharacterItems;
+    public Item[] InitialCharacterItems;
     public InventoryPanel inventoryVisual;
 
     private  List<Item> inventoryItems = new List<Item>();
 
     private void Start()
     {
-        foreach (Item item in CharacterItems)
+        foreach (Item item in InitialCharacterItems)
         {
-            
+            AddItem(item);
         }
     }
 
