@@ -1,24 +1,34 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemVisual : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+//Визуальное представление предмета, не делает ничего, кроме изменения картинки при инициализации,
+//Работает для Image и для SpriteRenderer, чтобы использовать и для предметов в инвентаре и для предметов вне его
+
+public class ItemVisual : MonoBehaviour
 {
-    private Item itemAsset;
+    private Item visualisingItem;
+    public Item Item
+    {
+        get
+        {
+            return visualisingItem;
+        }
+    }
+
     public void Init(Item item)
     {
-        itemAsset = item;
-        GetComponent<Image>().sprite = item.ItemImage;
-    }
+        visualisingItem = item;
+        if (GetComponent<SpriteRenderer>())
+        {
+            GetComponent<SpriteRenderer>().sprite = item.ItemImg;
+        }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        GetComponentInParent<InventoryPanel>().ShowInfo(itemAsset);
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        GetComponentInParent<InventoryPanel>().HideInfo(itemAsset);
+        if (GetComponent<Image>())
+        {
+            GetComponent<Image>().sprite = item.ItemImg;
+        }
     }
 }

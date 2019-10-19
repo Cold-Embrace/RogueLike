@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5316637768ae3704c94e8117c1735fae, type: 3}
-  m_Name: Shield
+  m_Script: {fileID: 11500000, guid: ec12c3756f35b8f4a9737d5e3ff306ae, type: 3}
+  m_Name: GoldenRing
   m_EditorClassIdentifier: 
-  ItemName: Shield
-  ItemDescription: Very, VERY STONG
-  ItemImage: {fileID: 21300040, guid: fbe1e7b94bb1a4a099d5bcb15a00141c, type: 3}
-  Itemtype: 0
-  weaponType: 2
+  ItemItemType: 0
+  ItemWeaponType: 0
+  ItemClothesType: 0
+  ItemImg: {fileID: 0}
+  ItemName: 
+  ItemDescription: 
+  Charges: 0
