@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec12c3756f35b8f4a9737d5e3ff306ae, type: 3}
   m_Name: GoldenRing
   m_EditorClassIdentifier: 
-  ItemItemType: 0
+  ItemItemType: 2
   ItemWeaponType: 0
-  ItemClothesType: 0
-  ItemImg: {fileID: 0}
-  ItemName: 
-  ItemDescription: 
+  ItemClothesType: 4
+  ItemImg: {fileID: 21300014, guid: 8d2a9138ee503444baadde27bc179cf7, type: 3}
+  ItemName: Ring of the...
+  ItemDescription: my BUTYYY
   Charges: 0
