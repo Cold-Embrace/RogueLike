@@ -19,7 +19,6 @@ public class WorldItem : MonoBehaviour {
     {
         GetComponentInChildren<ItemVisual>().Init(item);
         StartCoroutine(EnableCollider());
-
     }
 
     //Включаем коллайдер предмета через секунду, чтобы он не подбирался сразу, как только вылетает из сундука
@@ -32,10 +31,10 @@ public class WorldItem : MonoBehaviour {
     //Подбираем предмет, если в него вошел игрок
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.GetComponent<PlayerIdentity>() && GetComponent<Inventory>()?.GetFreeSlot() != null)
-        {   
-                collider.GetComponent<PlayerIdentity>().TakeItem(worldItem);
-                Destroy(transform.parent.gameObject);
+        if (collider.GetComponent<PlayerIdentity>() && (Transform.FindObjectOfType<Inventory>()?.GetFreeSlot() != null))
+        {
+            collider.GetComponent<PlayerIdentity>().TakeItem(worldItem);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

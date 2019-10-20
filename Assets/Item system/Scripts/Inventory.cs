@@ -57,8 +57,12 @@ public class Inventory : MonoBehaviour {
     //Вызывается при получении предмета и создаёт его визуальное представление в инвентаре
     private void ItemRecieved(Item item)
     {
-        
         Transform freeSlot = GetFreeSlot();
+        if (freeSlot == null)
+        {
+            Debug.Log(freeSlot);
+            return;
+        }
         GameObject itemVisual = Instantiate(ItemVisual, freeSlot.transform.position, Quaternion.identity, freeSlot);
         itemVisual.GetComponent<InventoryItem>().Init(item);
     }
@@ -83,6 +87,4 @@ public class Inventory : MonoBehaviour {
 
         return null;
     }
-
-  
 }
