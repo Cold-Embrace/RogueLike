@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec12c3756f35b8f4a9737d5e3ff306ae, type: 3}
-  m_Name: Boot
+  m_Name: Boots
   m_EditorClassIdentifier: 
-  ItemItemType: 0
+  ItemItemType: 2
   ItemWeaponType: 0
   ItemClothesType: 0
-  ItemImg: {fileID: 0}
-  ItemName: 
-  ItemDescription: 
+  ItemImg: {fileID: 21300048, guid: 8d2a9138ee503444baadde27bc179cf7, type: 3}
+  ItemName: Boot
+  ItemDescription: "\u0411\u043E\u0442\u0438\u043D\u043E\u0447\u043A\u0438"
   Charges: 0

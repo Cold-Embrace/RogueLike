@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec12c3756f35b8f4a9737d5e3ff306ae, type: 3}
-  m_Name: Bow
+  m_Name: Bows
   m_EditorClassIdentifier: 
-  ItemItemType: 0
+  ItemItemType: 1
   ItemWeaponType: 0
   ItemClothesType: 0
-  ItemImg: {fileID: 0}
+  ItemImg: {fileID: 21300032, guid: 8d2a9138ee503444baadde27bc179cf7, type: 3}
   ItemName: Bow
   ItemDescription: Bow
   Charges: 0

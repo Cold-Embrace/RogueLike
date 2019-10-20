@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec12c3756f35b8f4a9737d5e3ff306ae, type: 3}
-  m_Name: Sword
+  m_Name: 1hdSw
   m_EditorClassIdentifier: 
-  ItemItemType: 0
-  ItemWeaponType: 0
+  ItemItemType: 1
+  ItemWeaponType: 2
   ItemClothesType: 0
-  ItemImg: {fileID: 0}
-  ItemName: 
-  ItemDescription: 
+  ItemImg: {fileID: 21300040, guid: 8d2a9138ee503444baadde27bc179cf7, type: 3}
+  ItemName: 1hd
+  ItemDescription: Swooord
   Charges: 0
